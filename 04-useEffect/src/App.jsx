@@ -1,4 +1,5 @@
 import First from "./First"
+import Timer from "./Timer"
 
 
 function App(){
@@ -6,7 +7,8 @@ function App(){
 
 return (
   <>
-  <First/>
+  {/* <First/> */}
+  <Timer/>
   </>
 )
 

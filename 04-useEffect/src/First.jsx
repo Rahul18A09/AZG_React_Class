@@ -7,9 +7,10 @@ function First() {
 
 
     useEffect(() =>{
+        document.title = `count: ${count}`
         console.log("Component Re-rendered!");
         
-    }, [name,count]);
+    }, [name, count]);
 
   return (
     <div>
