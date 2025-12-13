@@ -1,0 +1,26 @@
+import { useState, useEffect } from "react";
+
+function Users() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((json) => setUsers(json));
+  }, []);
+
+  return (
+    <div>
+      <h2>User List</h2>
+      {users.map((u) => (
+        <ul>
+          <li key={u.id}>{u.id}-{u.name}</li>
+          <li key={u.id}>{u.email}</li>
+          <li key={u.id}>{u.address.street}</li>
+        </ul>
+      ))}
+    </div>
+  );
+}
+
+export default Users;

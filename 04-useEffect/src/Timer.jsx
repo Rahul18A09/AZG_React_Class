@@ -9,6 +9,12 @@ function Timer() {
       const interval = setInterval(()=>{
         setSeconds((prev)=> prev + 1)
       }, 1000);
+
+      return() =>{
+        clearInterval(interval)
+        console.log("Timer Cleared.");
+        
+      }
         
     }, []);
 
