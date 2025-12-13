@@ -1,0 +1,39 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.counter-container {
+  background-color: beige;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 15;
+  padding: 1.5rem;
+  border: 2px solid black;
+  width: 350px;
+  border-radius: 20px;
+}
+
+#btn {
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: greenyellow;
+}
+
+#btn1 {
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: red;
+}
+
+.btn-group{
+    display: flex;
+    justify-content:center;
+    gap: 10px;
+   
+}
