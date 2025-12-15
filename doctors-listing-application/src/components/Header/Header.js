@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="top-bar">
-        <div>
+        <div className="top-bar-left">
           <span>
             <i className="ri-mail-line"></i>cityhospital@example.com
           </span>
@@ -16,7 +16,7 @@ const Header = () => {
           </span>
         </div>
 
-        <div>
+        <div className="top-social-icon">
           <span>
             <i className="ri-twitter-fill"></i>
           </span>

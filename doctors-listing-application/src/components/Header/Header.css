@@ -7,7 +7,21 @@
     display: flex;
     justify-content: space-between;
     padding: 8px 40px;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.top-bar i{
+    color: #e85b2b;
+}
+
+.top-bar-left{
+    display: flex;
+    gap: 10px;
+}
+
+.top-social-icon{
+    display: flex;
+    gap: 15px;
 }
 
 .navbar {
@@ -39,4 +53,8 @@ a{
     border-radius: 25px;
     padding:5px 30px;
     cursor: pointer;
+}
+
+@media(max-width:768px){
+.navbar ul{display:none;}
 }
