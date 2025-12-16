@@ -19,3 +19,19 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+.socials {
+  margin-top: 10px;
+}
+
+.socials span{
+    background-color: lightblue;
+    border-radius: 50%;
+    padding: 10px;
+    color: #fff;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
