@@ -21,6 +21,14 @@
   text-align: center;
 }
 
+.card-content h3{
+  color: #4f4fa7;
+}
+.card-content h3,p{
+  margin-bottom: 10px;
+}
+
+
 .card img {
   width: 120px;
   height: 120px;
@@ -34,12 +42,20 @@
 
 .socials span{
     background-color: lightblue;
+    color: #fff;
     border-radius: 50%;
     padding: 10px;
-    color: #fff;
+    margin-left: 8px;
 }
 
 .card-content {
     display: flex;
     flex-direction: column;
+}
+
+.card-content .link{
+  background-color: orangered;
+  color: #fff;
+  padding: 8px 20px;
+
 }

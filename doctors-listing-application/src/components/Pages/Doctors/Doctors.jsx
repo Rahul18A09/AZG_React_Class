@@ -4,6 +4,7 @@ import doc1 from "../../../assets/images/doctors-1.jpg";
 import doc2 from "../../../assets/images/doctors-2.jpg";
 import doc3 from "../../../assets/images/doctors-3.jpg";
 import doc4 from "../../../assets/images/doctors-4.jpg";
+import { Link } from "react-router-dom";
 
 const Doctors = () => {
   const doctorsData = [
@@ -46,6 +47,9 @@ const Doctors = () => {
             <h3>{doc.name}</h3>
             <p>{doc.post}</p>
             <p>{doc.info}</p>
+            <p className="link">
+              <Link to={String(doc.id)}>View Profile</Link>
+            </p>
             <div className="socials">
               <span>
                 <i className="ri-twitter-fill"></i>

@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.doctor-details {
+  text-align: center;
+  background: #f8f8f8;
+}
+
+.doctor-img img {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.doctor-details-content {
+  position: relative;
+}
+
+.doctor-details-content h2 {
+  color: #4f4fa7;
+  margin-bottom: 10px;
+}
+.doctor-details-content h2::before {
+  content: "";
+  position: absolute;
+  align-items: center;
+  left: 48%;
+  bottom: 75%;
+  width: 50px;
+  height: 4px;
+  margin-bottom: 5px;
+  background-color: #e85b2b;
+}
