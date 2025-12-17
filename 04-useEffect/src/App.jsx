@@ -1,3 +1,4 @@
+import Effects from "./components/Effects"
 import Counter from "./Counter"
 import First from "./First"
 import Timer from "./Timer"
@@ -15,6 +16,7 @@ return (
   {/* <WindowsSizeTracker/> */}
   {/* <Users/> */}
   <Counter/>
+{/* <Effects/> */}
   </>
 )
 
