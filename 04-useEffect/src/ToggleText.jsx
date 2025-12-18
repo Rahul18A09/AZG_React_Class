@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 
 const ToggleText = () => {
 
-    const [isVisible, setIsvisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
 
   return (
     <div>
-      <button onClick={()=> setIsvisible(!isVisible)}>
+      <button onClick={()=> setIsVisible(!isVisible)}>
         {isVisible ? "Hide" : "Show"} Text</button>
+
+        { isVisible && <p>This is secret message</p>}
     </div>
   )
 }
