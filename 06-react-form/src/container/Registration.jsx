@@ -10,30 +10,63 @@ const Registration = () => {
     console.log(nameRef.current.value);
     console.log(emailRef.current.value);
     console.log(passwordRef.current.value);
-    console.log(passwordRef);
-    
+ 
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullname">Full Name:</label>
-          <input type="text" name="fullname" id="fullname" ref={nameRef} />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" name="email" id="email" ref={emailRef} />
-        </div>
+    <div className="container vh-100 d-flex justify-content-center align-items-center">
+      <div
+        className="card shadow p-4"
+        style={{ width: "100%", maxWidth: "420px" }}
+      >
+        <h4 className="text-center mb-4">Create Account</h4>
 
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input type="password" name="password" id="password"ref={passwordRef} />
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="fullname" className="form-label">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              className="form-control"
+              placeholder="Enter full name"
+              ref={nameRef}
+              required
+            />
+          </div>
 
-        <button type="submit">Register</button>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="form-control"
+              placeholder="Enter email"
+              ref={emailRef}
+              required
+            />
+          </div>
 
-      </form>
+          <div className="mb-4">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="form-control"
+              placeholder="Enter password"
+              ref={passwordRef}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-primary w-100">
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
