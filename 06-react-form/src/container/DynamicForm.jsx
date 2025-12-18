@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const DynamicForm = () => {
+
+    const [fields, setFields] = useState([""]);
+
+
   return (
     <div>
       
