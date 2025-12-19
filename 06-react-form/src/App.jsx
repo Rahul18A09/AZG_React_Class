@@ -4,6 +4,7 @@ import Login from "./container/Login";
 import Registration from "./container/Registration";
 import SimpleForm from "./container/SimpleForm";
 import MultipleInputForm from "./container/MultipleInputFrom";
+import AdvancedForm from "./container/AdvancedForm";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/registration" element={<Registration />} />
         <Route path="/simpleform" element={<SimpleForm />} />
         <Route path="/multipleinputform" element={<MultipleInputForm/>}/>
+        <Route path="/advancedform" element={<AdvancedForm/>}/>
       </Routes>
     </div>
   );
