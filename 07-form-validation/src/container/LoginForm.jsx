@@ -7,21 +7,18 @@ const LoginForm = () => {
     initialValues: {
       fullname: "",
       email: "",
-      password: "",
+
     },
 
     validationSchema: Yup.object({
-      name: Yup.string()
-        .min(6, "Name must be at least 6 characters")
-        .required("Name is required"),
+      fullname: Yup.string()
+        .min(6, "Full Name must be at least 6 characters")
+        .required("Full Name is required"),
 
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
 
-      // password: Yup.string()
-      //   .min(6, "Password must be at least 6 characters")
-      //   .required("Password is required"),
     }),
 
     onSubmit: (values) => {
