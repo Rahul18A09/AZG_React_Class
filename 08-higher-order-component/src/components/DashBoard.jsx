@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const DashBoard = () => {
-  return (
-   <h2>WelCome to DashBoard Component</h2>
-  )
-}
+  const navigate = useNavigate();
 
-export default DashBoard
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
+  return (
+    <div>
+      <h2>DashBoard (Protected)</h2>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
+};
+
+export default DashBoard;
