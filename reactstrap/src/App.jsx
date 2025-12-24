@@ -1,19 +1,34 @@
 import React from "react";
-import { Button } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import MyCard from "./component/MyCard";
 import Layout from "./component/Layout";
 import Login from "./component/Login";
-
+import Header from "./component/Header";
+import SideBar from "./component/SideBar";
+import Content from "./component/Content";
+import Footer from "./component/Footer";
 
 function App() {
   return (
-    <div>
+    <>
       {/* <MyCard /> */}
       {/* <Layout /> */}
-      
-<Login/>
+      {/* <Login /> */}
 
-    </div>
+      <Header />
+
+      <Container fluid className="mt-3">
+        <Row>
+          <Col md="3" className="border-end">
+            <SideBar />
+          </Col>
+          <Col md="9" >
+            <Content />
+          </Col>
+        </Row>
+      </Container>
+      <Footer/>
+    </>
   );
 }
 
