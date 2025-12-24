@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/simpleform" element={<SimpleForm />} />
         <Route path="/multipleinputform" element={<MultipleInputForm />} />
         <Route path="/advancedform" element={<AdvancedForm />} />
-        <Route path="/uncontrolledform" element={<UncontrolledForm/>}/>
+        <Route path="/uncontrolledform" element={<UncontrolledForm />} />
         <Route
           path="*"
           element={<h2 className="text-center mt-5">404 Page Not Found</h2>}
