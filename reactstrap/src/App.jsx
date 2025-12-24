@@ -23,7 +23,7 @@ function App() {
             <SideBar />
           </Col>
           <Col md="9" >
-            <Content />
+            <Content name="Amazone" />
           </Col>
         </Row>
       </Container>

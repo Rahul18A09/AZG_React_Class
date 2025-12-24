@@ -9,7 +9,7 @@ import {
   Row,
 } from "reactstrap";
 
-function DashBoardCard() {
+function DashBoardCard({name}) {
   const cardsData = [
     { title: "Users", value: "1,250", color: "primary" },
     { title: "Orders", value: "320", color: "success" },
@@ -22,8 +22,9 @@ function DashBoardCard() {
       <Row>
         {cardsData.map((card, index) => (
           <Col md="3" sm="6" xs="12" key={index} className="mb-3">
-            <Card body inverse color={card.color}>
+            <Card body inverse color={card.color} className="border-5 border-info">
               <CardBody>
+                <h2 className="text-dark">{name}</h2>
                 <CardTitle tag="h5">{card.title}</CardTitle>
                 <CardText className="fs-3 fw-bold">{card.value}</CardText>
               </CardBody>

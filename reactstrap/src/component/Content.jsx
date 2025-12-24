@@ -2,7 +2,7 @@ import React from "react";
 // import { Card, CardBody, CardText, CardTitle } from "reactstrap";
 import DashBoardCard from "./DashBoardCard";
 
-function Content() {
+function Content(props) {
   return (
     //    <Card>
     //     <CardBody>
@@ -13,7 +13,7 @@ function Content() {
 
     <div>
       <h2 className="mb-4">DashBoard</h2>
-      <DashBoardCard />
+      <DashBoardCard name="Amazone"/>
     </div>
   );
 }
