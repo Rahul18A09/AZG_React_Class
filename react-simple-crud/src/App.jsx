@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       {/* <Users /> */}
-      <Crud/>
+      <Crud />
     </div>
   );
 }
