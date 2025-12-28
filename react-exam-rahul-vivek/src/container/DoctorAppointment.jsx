@@ -14,7 +14,7 @@ import {
   Table,
 } from "reactstrap";
 
-export default function DoctorAppointment() {
+function DoctorAppointment() {
   const [users, setUser] = useState([]);
   const [editId, setEditIt] = useState(null);
 
@@ -52,7 +52,7 @@ export default function DoctorAppointment() {
     validationSchema,
     onSubmit: (value) => {
       if (editId === null) {
-        setUser([...users, { ...value, id: Date.now(), status: "Panding" }]);
+        setUser([...users, { ...value, id: Date.now(), status: "Pending" }]);
       } else {
         const updatedUsers = users.map((user) =>
           user.id === editId ? { ...user, ...value } : user
@@ -61,12 +61,12 @@ export default function DoctorAppointment() {
         setUser(updatedUsers);
         setEditIt(null);
       }
-      console.log(value);
       formik.resetForm();
     },
   });
 
   function editUserId(user) {
+    setEditIt(user.id);
     formik.setValues({
       pname: user.pname,
       email: user.email,
@@ -82,11 +82,20 @@ export default function DoctorAppointment() {
     setUser(users.filter((user) => user.id !== id));
   }
 
-  function confirm() {}
+  function confirm(id) {
+    const updatedUsers = users.map((user) =>
+      user.id === id ? { ...user, status: "Confirmed" } : user
+    );
+    setUser(updatedUsers);
+  }
 
+  function complatee(id) {
+    const updatedUsers = users.map((user) =>
+      user.id === id ? { ...user, status: "Completed" } : user
+    );
+    setUser(updatedUsers);
+  }
 
-
-  function complatee() {}
   return (
     <Container fluid>
       <Card className="w-50 m-auto">
@@ -222,10 +231,10 @@ export default function DoctorAppointment() {
               </td>
               <td>{user.status}</td>
               <td>
-                <Button onClick={() => editUserId(user)}>Edit</Button>
-                <Button onClick={() => deleteUSer(user.id)}>Delete</Button>
-                <Button onClick={() => confirm()}>Confirm</Button>
-                <Button onClick={() => complatee()}>Complete</Button>
+                <Button className="me-2" color="info" onClick={() => editUserId(user)}>Edit</Button>
+                <Button className="me-2" color="danger" onClick={() => deleteUSer(user.id)}>Delete</Button>
+                <Button className="me-2" color="success" onClick={() => confirm(user.id)}>Confirm</Button>
+                <Button className="me-2" color="warning" onClick={() => complatee(user.id)}>Complete</Button>
               </td>
             </tr>
           ))}
@@ -234,3 +243,5 @@ export default function DoctorAppointment() {
     </Container>
   );
 }
+
+export default DoctorAppointment;
