@@ -9,7 +9,7 @@ function UserForm() {
   const { id } = useParams(); // edit id
 
   const users = getUsers();
-  const editUser = users.find((user) => users.id === Number(id));
+  const editUser = users.find((u) => u.id === Number(id));
 
   const formik = useFormik({
     initialValues: {
@@ -23,8 +23,8 @@ function UserForm() {
     }),
     onSubmit: (values) => {
       if (id) {
-        const updated = users.map((user) =>
-          users.id === Number(id) ? { ...users, ...values } : u
+        const updated = users.map((u) =>
+          u.id === Number(id) ? { ...u, ...values } : u
         );
         saveUsers(updated);
       } else {

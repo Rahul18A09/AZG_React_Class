@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getUsers, saveUsers } from "../utils/storage";
 
 function UserList() {
@@ -9,15 +10,15 @@ function UserList() {
     setUsers(getUsers());
   }, []);
 
-  function deleteUser(id) {
-    const updated = users.filter((user) => users.id !== id);
+  const deleteUser = (id) => {
+    const updated = users.filter((u) => u.id !== id);
     setUsers(updated);
     saveUsers(updated);
-  }
+  };
 
   return (
     <div>
-      <h2>UserList</h2>
+      <h2>User List</h2>
       <button onClick={() => navigate("/add")}>Add User</button>
 
       <table border="1">
@@ -29,9 +30,8 @@ function UserList() {
             <td>Action</td>
           </tr>
         </thead>
-
         <tbody>
-          {users && Array.isArray(users) && users.length > 0 ? (
+          {users.length ? (
             users.map((user) => (
               <tr key={user.id}>
                 <td>{user.id}</td>
@@ -41,7 +41,9 @@ function UserList() {
                   <button onClick={() => navigate(`/edit/${user.id}`)}>
                     Edit
                   </button>
-                  <button onClick={() => deleteUser(user.id)}>Delete</button>
+                  <button onClick={() => deleteUser(user.id)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))
