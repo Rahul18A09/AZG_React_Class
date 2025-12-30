@@ -1,5 +1,7 @@
 import React from 'react';
 import OuterBox from './OuterBox';
+import Parent1 from './Parent1';
+
 
 
 function Parent() {
@@ -20,7 +22,8 @@ function App(props) {
   return (
     <div>
       {/* <Parent/> */}
-      <OuterBox/>
+      {/* <OuterBox/> */}
+      <Parent1/>
     </div>
   );
 }
