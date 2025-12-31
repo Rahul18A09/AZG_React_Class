@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import MakeAnAppointment from './container/MakeAnAppointment';
 
+
 function App(props) {
   return (
     <div>
@@ -22,7 +23,7 @@ function App(props) {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/makeanappointment' element={<MakeAnAppointment/>}/>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     
     </div>
   );

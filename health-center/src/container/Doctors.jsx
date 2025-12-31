@@ -15,7 +15,7 @@ function Doctors(props) {
         <div className="clearfix" />
         <div className="col-md-4 col-sm-6">
           <div className="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-            <img src="images/team-image1.jpg" className="img-responsive" alt />
+            <img src="./assets/images/team-image1.jpg" className="img-responsive" alt />
             <div className="team-info">
               <h3>Nate Baston</h3>
               <p>General Principal</p>
@@ -32,7 +32,7 @@ function Doctors(props) {
         </div>
         <div className="col-md-4 col-sm-6">
           <div className="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-            <img src="images/team-image2.jpg" className="img-responsive" alt />
+            <img src="./assets/images/team-image2.jpg" className="img-responsive" alt />
             <div className="team-info">
               <h3>Jason Stewart</h3>
               <p>Pregnancy</p>
@@ -50,7 +50,7 @@ function Doctors(props) {
         </div>
         <div className="col-md-4 col-sm-6">
           <div className="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-            <img src="images/team-image3.jpg" className="img-responsive" alt />
+            <img src="./assets/images/team-image3.jpg" className="img-responsive" alt />
             <div className="team-info">
               <h3>Miasha Nakahara</h3>
               <p>Cardiology</p>

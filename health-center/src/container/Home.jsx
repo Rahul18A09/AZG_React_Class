@@ -1,7 +1,7 @@
-import React from 'react'
+
 import {Link}from 'react-router-dom'
 
-export default function Home() {
+ function Home() {
   return (
     <main>
       <section id="home" className="slider" data-stellar-background-ratio="0.5">
@@ -42,3 +42,4 @@ export default function Home() {
     </main>
   )
 }
+export default Home;

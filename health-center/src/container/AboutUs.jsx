@@ -26,7 +26,7 @@ function AboutUs(props) {
                 </div>
                 <figure className="profile wow fadeInUp" data-wow-delay="1s">
                   <img
-                    src="images/author-image.jpg"
+                    src="./assets/images/author-image.jpg"
                     className="img-responsive"
                     alt
                   />
