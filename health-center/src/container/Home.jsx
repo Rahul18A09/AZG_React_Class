@@ -1,0 +1,44 @@
+import React from 'react'
+import {Link}from 'react-router-dom'
+
+export default function Home() {
+  return (
+    <main>
+      <section id="home" className="slider" data-stellar-background-ratio="0.5">
+    <div className="container">
+      <div className="row">
+        <div className="owl-carousel owl-theme">
+          <div className="item item-first">
+            <div className="caption">
+              <div className="col-md-offset-1 col-md-10">
+                <h3>Let's make your life happier</h3>
+                <h1>Healthy Living</h1>
+                <Link to="/doctors" className="section-btn btn btn-default smoothScroll">Meet Our Doctors</Link>
+              </div>
+            </div>
+          </div>
+          <div className="item item-second">
+            <div className="caption">
+              <div className="col-md-offset-1 col-md-10">
+                <h3>Aenean luctus lobortis tellus</h3>
+                <h1>New Lifestyle</h1>
+                <Link to="/about" className="section-btn btn btn-default btn-gray smoothScroll">More About Us</Link>
+              </div>
+            </div>
+          </div>
+          <div className="item item-third">
+            <div className="caption">
+              <div className="col-md-offset-1 col-md-10">
+                <h3>Pellentesque nec libero nisi</h3>
+                <h1>Your Health Benefits</h1>
+                <Link to="/news" className="section-btn btn btn-default btn-blue smoothScroll">Read Stories</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    </main>
+  )
+}
