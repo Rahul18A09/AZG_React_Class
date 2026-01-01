@@ -36,7 +36,7 @@ function Footer(props) {
                   <div className="stories-image">
                     <Link to="/">
                       <img
-                        src="images/news-image.jpg"
+                        src="./assets/images/news-image.jpg"
                         className="img-responsive"
                         alt
                       />
@@ -53,7 +53,7 @@ function Footer(props) {
                   <div className="stories-image">
                     <Link to="/">
                       <img
-                        src="images/news-image.jpg"
+                        src="./assets/images/news-image.jpg"
                         className="img-responsive"
                         alt
                       />

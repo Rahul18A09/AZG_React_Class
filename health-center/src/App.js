@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import MakeAnAppointment from './container/MakeAnAppointment';
 
 
+
 function App(props) {
   return (
     <div>
@@ -21,9 +22,9 @@ function App(props) {
         <Route path='/doctors' element={<Doctors/>}/>
         <Route path='/news' element={<News/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/makeanappointment' element={<MakeAnAppointment/>}/>
+        <Route path='/appointment' element={<MakeAnAppointment/>}/>
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     
     </div>
   );

@@ -9,7 +9,7 @@ function MakeAnAppointment(props) {
           <div className="row">
             <div className="col-md-6 col-sm-6">
               <img
-                src="images/appointment-image.jpg"
+                src="./assets/images/appointment-image.jpg"
                 className="img-responsive"
                 alt
               />
