@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHSquare } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,12 @@ import {
   faFlickr,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
+
 function Home() {
   return (
     <main>
@@ -18,50 +24,65 @@ function Home() {
       <section id="home" className="slider" data-stellar-background-ratio="0.5">
         <div className="container">
           <div className="row">
-            <div className="owl-carousel owl-theme">
-              <div className="item item-first">
-                <div className="caption">
-                  <div className="col-md-offset-1 col-md-10">
-                    <h3>Let's make your life happier</h3>
-                    <h1>Healthy Living</h1>
-                    <Link
-                      to="/doctors"
-                      className="section-btn btn btn-default smoothScroll"
-                    >
-                      Meet Our Doctors
-                    </Link>
+            <Swiper
+              modules={[Autoplay, EffectFade]}
+              effect="fade"
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              loop={true}
+              slidesPerView={1}
+              className="home-slider"
+            >
+              <SwiperSlide>
+                <div className="item item-first">
+                  <div className="caption">
+                    <div className="col-md-offset-1 col-md-10">
+                      <h3>Let's make your life happier</h3>
+                      <h1>Healthy Living</h1>
+                      <Link
+                        to="/doctors"
+                        className="section-btn btn btn-default smoothScroll"
+                      >
+                        Meet Our Doctors
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="item item-second">
-                <div className="caption">
-                  <div className="col-md-offset-1 col-md-10">
-                    <h3>Aenean luctus lobortis tellus</h3>
-                    <h1>New Lifestyle</h1>
-                    <Link
-                      to="/about"
-                      className="section-btn btn btn-default btn-gray smoothScroll"
-                    >
-                      More About Us
-                    </Link>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="item item-second">
+                  <div className="caption">
+                    <div className="col-md-offset-1 col-md-10">
+                      <h3>Aenean luctus lobortis tellus</h3>
+                      <h1>New Lifestyle</h1>
+                      <Link
+                        to="/about"
+                        className="section-btn btn btn-default btn-gray smoothScroll"
+                      >
+                        More About Us
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="item item-third">
-                <div className="caption">
-                  <div className="col-md-offset-1 col-md-10">
-                    <h3>Pellentesque nec libero nisi</h3>
-                    <h1>Your Health Benefits</h1>
-                    <Link
-                      to="/news"
-                      className="section-btn btn btn-default btn-blue smoothScroll"
-                    >
-                      Read Stories
-                    </Link>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="item item-third">
+                  <div className="caption">
+                    <div className="col-md-offset-1 col-md-10">
+                      <h3>Pellentesque nec libero nisi</h3>
+                      <h1>Your Health Benefits</h1>
+                      <Link
+                        to="/news"
+                        className="section-btn btn btn-default btn-blue smoothScroll"
+                      >
+                        Read Stories
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </section>
@@ -92,7 +113,7 @@ function Home() {
                   <img
                     src="./assets/images/author-image.jpg"
                     className="img-responsive"
-                    alt
+                    alt="author"
                   />
                   <figcaption>
                     <h3>Dr. Neil Jackson</h3>
@@ -123,7 +144,7 @@ function Home() {
                 <img
                   src="./assets/images/team-image1.jpg"
                   className="img-responsive"
-                  alt
+                  alt="team-image1"
                 />
                 <div className="team-info">
                   <h3>Nate Baston</h3>
@@ -159,7 +180,7 @@ function Home() {
                 <img
                   src="./assets/images/team-image2.jpg"
                   className="img-responsive"
-                  alt
+                  alt="team-image2"
                 />
                 <div className="team-info">
                   <h3>Jason Stewart</h3>
@@ -198,7 +219,7 @@ function Home() {
                 <img
                   src="./assets/images/team-image3.jpg"
                   className="img-responsive"
-                  alt
+                  alt="team-image3"
                 />
                 <div className="team-info">
                   <h3>Miasha Nakahara</h3>
@@ -249,7 +270,7 @@ function Home() {
                   <img
                     src="./assets/images/news-image1.jpg"
                     className="img-responsive"
-                    alt
+                    alt="news-image1"
                   />
                 </Link>
                 <div className="news-info">
@@ -265,7 +286,7 @@ function Home() {
                     <img
                       src="./assets/images/author-image.jpg"
                       className="img-responsive"
-                      alt
+                      alt="author"
                     />
                     <div className="author-info">
                       <h5>Jeremie Carlson</h5>
@@ -282,7 +303,7 @@ function Home() {
                   <img
                     src="./assets/images/news-image2.jpg"
                     className="img-responsive"
-                    alt
+                    alt="news-image2"
                   />
                 </Link>
                 <div className="news-info">
@@ -298,7 +319,7 @@ function Home() {
                     <img
                       src="./assets/images/author-image.jpg"
                       className="img-responsive"
-                      alt
+                      alt="author"
                     />
                     <div className="author-info">
                       <h5>Jason Stewart</h5>
@@ -315,7 +336,7 @@ function Home() {
                   <img
                     src="./assets/images/news-image3.jpg"
                     className="img-responsive"
-                    alt
+                    alt="news-image3"
                   />
                 </Link>
                 <div className="news-info">
@@ -331,7 +352,7 @@ function Home() {
                     <img
                       src="./assets/images/author-image.jpg"
                       className="img-responsive"
-                      alt
+                      alt="author"
                     />
                     <div className="author-info">
                       <h5>Andrio Abero</h5>
@@ -369,7 +390,7 @@ function Home() {
               <img
                 src="./assets/images/appointment-image.jpg"
                 className="img-responsive"
-                alt
+                alt="appointment-image"
               />
             </div>
             <div className="col-md-6 col-sm-6">

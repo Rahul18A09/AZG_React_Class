@@ -411,6 +411,16 @@ header span i {
   margin: 0;
 }
 
+/* swiper */
+.home-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper {
+  overflow: hidden;
+}
+
 .slider .container {
   width: 100%;
 }
@@ -542,7 +552,7 @@ header span i {
   font-weight: 500;
 }
 
-.team-thumb .social-icon li{
+.team-thumb .social-icon li {
   background: #ffffff;
   border-radius: 100%;
   font-size: 20px;
