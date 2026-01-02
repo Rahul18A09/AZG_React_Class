@@ -1,5 +1,20 @@
 import React from "react";
-import {Link}from 'react-router-dom'
+import { Link } from "react-router-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faPhone,
+  faEnvelope,
+  faAngleUp,
+} from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faFacebookSquare,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
 
 function Footer(props) {
   return (
@@ -18,10 +33,10 @@ function Footer(props) {
                 </p>
                 <div className="contact-info">
                   <p>
-                    <i className="fa fa-phone" /> 010-070-0170
+                    <FontAwesomeIcon icon={faPhone} /> 010-070-0170
                   </p>
                   <p>
-                    <i className="fa fa-envelope-o" />{" "}
+                    <FontAwesomeIcon icon={faEnvelope} />{" "}
                     <Link to="/">info@company.com</Link>
                   </p>
                 </div>
@@ -86,17 +101,15 @@ function Footer(props) {
                 </div>
                 <ul className="social-icon">
                   <li>
-                    <Link
-                      to="https://www.facebook.com/tooplate"
-                      className="fa fa-facebook-square"
-                      attr="facebook icon"
-                    />
+                    <Link to="https://www.facebook.com/tooplate">
+                      <FontAwesomeIcon icon={faFacebookSquare} />
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/" className="fa fa-twitter" />
+                     <FontAwesomeIcon icon={faTwitter} />
                   </li>
                   <li>
-                    <Link to="/" className="fa fa-instagram" />
+                     <FontAwesomeIcon icon={faInstagram} />
                   </li>
                 </ul>
               </div>
@@ -127,7 +140,8 @@ function Footer(props) {
                     className="smoothScroll wow fadeInUp"
                     data-wow-delay="1.2s"
                   >
-                    <i className="fa fa-angle-up" />
+                    {/* <i className="fa fa-angle-up" /> */}
+                    <FontAwesomeIcon icon={faAngleUp} />
                   </Link>
                 </div>
               </div>

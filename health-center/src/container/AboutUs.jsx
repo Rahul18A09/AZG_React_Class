@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHSquare } from "@fortawesome/free-solid-svg-icons";
 
 function AboutUs(props) {
   return (
@@ -9,8 +11,7 @@ function AboutUs(props) {
             <div className="col-md-6 col-sm-6">
               <div className="about-info">
                 <h2 className="wow fadeInUp" data-wow-delay="0.6s">
-                  Welcome to Your <i className="fa fa-h-square" />
-                  ealth Center
+                  Welcome to Your <FontAwesomeIcon icon={faHSquare}/>ealth Center
                 </h2>
                 <div className="wow fadeInUp" data-wow-delay="0.8s">
                   <p>
