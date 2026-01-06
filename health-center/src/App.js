@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Public pages
 import Home from "./container/Home";
@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 
 function App(props) {
   return (
-    <div>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,7 +25,7 @@ function App(props) {
         <Route path="/appointment" element={<MakeAnAppointment />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
