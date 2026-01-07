@@ -12,7 +12,7 @@ import {
 const Appointments = () => {
   return (
     <>
-      <Typography variant="h5" fontWeight="bold" mb={3}>
+      <Typography variant="h3" fontWeight="bold" mb={3}>
         Appointments
       </Typography>
 
@@ -20,20 +20,20 @@ const Appointments = () => {
         <Table>
           <TableHead sx={{ backgroundColor: "#f1f8e9" }}>
             <TableRow>
-              <TableCell>Patient</TableCell>
-              <TableCell>Doctor</TableCell>
-              <TableCell>Date</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Patient</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Doctor</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Date</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Status</TableCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
             <TableRow>
-              <TableCell>Rahul</TableCell>
-              <TableCell>Dr. John Smith</TableCell>
-              <TableCell>12 Jan 2026</TableCell>
-              <TableCell>
-                <Chip label="Confirmed" color="success" />
+              <TableCell  sx={{ fontSize:"14px"}}>Rahul</TableCell>
+              <TableCell  sx={{ fontSize:"14px"}}>Dr. John Smith</TableCell>
+              <TableCell  sx={{ fontSize:"14px"}}>12 Jan 2026</TableCell>
+              <TableCell  sx={{ fontSize:"14px"}}>
+                <Chip  sx={{ fontSize:"14px"}} label="Confirmed" color="success" />
               </TableCell>
             </TableRow>
           </TableBody>

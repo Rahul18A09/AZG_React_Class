@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import Sidebar from "../Sidebar";
-import Topbar from "../Topbar";
+import Sidebar from "./Sidebar";
+import Topbar from "./Topbar";
 
 const AdminLayout = ({ children }) => {
   return (

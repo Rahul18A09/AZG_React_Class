@@ -12,7 +12,7 @@ import {
 const Doctors = () => {
   return (
     <>
-      <Typography variant="h5" fontWeight="bold" mb={3}>
+      <Typography variant="h3" fontWeight="bold" mb={3}>
         Doctors
       </Typography>
 
@@ -22,6 +22,7 @@ const Doctors = () => {
           mb: 2,
           backgroundColor: "#8bc34a",
           "&:hover": { backgroundColor: "#7cb342" },
+          fontSize:"14px",
         }}
       >
         Add Doctor
@@ -29,24 +30,24 @@ const Doctors = () => {
 
       <Paper>
         <Table>
-          <TableHead sx={{ backgroundColor: "#f1f8e9" }}>
+          <TableHead sx={{ backgroundColor: "#f1f8e9", }}>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Specialization</TableCell>
-              <TableCell>Experience</TableCell>
-              <TableCell align="right">Action</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Name</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Specialization</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}}>Experience</TableCell>
+              <TableCell  sx={{ fontSize:"16px"}} align="right">Action</TableCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
             {/* Dummy Row */}
             <TableRow>
-              <TableCell>Dr. John Smith</TableCell>
-              <TableCell>Cardiology</TableCell>
-              <TableCell>10 Years</TableCell>
-              <TableCell align="right">
-                <Button size="small">Edit</Button>
-                <Button size="small" color="error">
+              <TableCell  sx={{ fontSize:"14px"}}>Dr. John Smith</TableCell>
+              <TableCell  sx={{ fontSize:"14px"}}>Cardiology</TableCell>
+              <TableCell  sx={{ fontSize:"14px"}}>10 Years</TableCell>
+              <TableCell  sx={{ fontSize:"14px"}} align="right">
+                <Button  sx={{ fontSize:"16px"}} size="small">Edit</Button>
+                <Button  sx={{ fontSize:"16px"}} size="small" color="error">
                   Delete
                 </Button>
               </TableCell>
