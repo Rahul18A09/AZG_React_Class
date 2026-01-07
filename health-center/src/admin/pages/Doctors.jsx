@@ -7,53 +7,86 @@ import {
   TableRow,
   Typography,
   Paper,
+  Box,
 } from "@mui/material";
 
 const Doctors = () => {
   return (
     <>
-      <Typography variant="h3" fontWeight="bold" mb={3}>
+      {/* Page Title */}
+      <Typography
+        fontWeight="bold"
+        mb={{ xs: 2, sm: 3 }}
+        sx={{ fontSize: { xs: "20px", sm: "28px" } }}
+      >
         Doctors
       </Typography>
 
+      {/* Add Button */}
       <Button
         variant="contained"
         sx={{
           mb: 2,
           backgroundColor: "#8bc34a",
           "&:hover": { backgroundColor: "#7cb342" },
-          fontSize:"14px",
+          fontSize: { xs: "12px", sm: "14px" },
+          px: { xs: 2, sm: 3 },
         }}
       >
         Add Doctor
       </Button>
 
-      <Paper>
-        <Table>
-          <TableHead sx={{ backgroundColor: "#f1f8e9", }}>
-            <TableRow>
-              <TableCell  sx={{ fontSize:"16px"}}>Name</TableCell>
-              <TableCell  sx={{ fontSize:"16px"}}>Specialization</TableCell>
-              <TableCell  sx={{ fontSize:"16px"}}>Experience</TableCell>
-              <TableCell  sx={{ fontSize:"16px"}} align="right">Action</TableCell>
-            </TableRow>
-          </TableHead>
+      {/* Table Wrapper for Mobile Scroll */}
+      <Paper sx={{ width: "100%", overflowX: "auto" }}>
+        <Box sx={{ minWidth: 600 }}>
+          <Table>
+            <TableHead sx={{ backgroundColor: "#f1f8e9" }}>
+              <TableRow>
+                <TableCell sx={{ fontSize: { xs: "13px", sm: "16px" } }}>
+                  Name
+                </TableCell>
+                <TableCell sx={{ fontSize: { xs: "13px", sm: "16px" } }}>
+                  Specialization
+                </TableCell>
+                <TableCell sx={{ fontSize: { xs: "13px", sm: "16px" } }}>
+                  Experience
+                </TableCell>
+                <TableCell
+                  align="right"
+                  sx={{ fontSize: { xs: "13px", sm: "16px" } }}
+                >
+                  Action
+                </TableCell>
+              </TableRow>
+            </TableHead>
 
-          <TableBody>
-            {/* Dummy Row */}
-            <TableRow>
-              <TableCell  sx={{ fontSize:"14px"}}>Dr. John Smith</TableCell>
-              <TableCell  sx={{ fontSize:"14px"}}>Cardiology</TableCell>
-              <TableCell  sx={{ fontSize:"14px"}}>10 Years</TableCell>
-              <TableCell  sx={{ fontSize:"14px"}} align="right">
-                <Button  sx={{ fontSize:"16px"}} size="small">Edit</Button>
-                <Button  sx={{ fontSize:"16px"}} size="small" color="error">
-                  Delete
-                </Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+            <TableBody>
+              <TableRow>
+                <TableCell sx={{ fontSize: { xs: "12px", sm: "14px" } }}>
+                  Dr. John Smith
+                </TableCell>
+                <TableCell sx={{ fontSize: { xs: "12px", sm: "14px" } }}>
+                  Cardiology
+                </TableCell>
+                <TableCell sx={{ fontSize: { xs: "12px", sm: "14px" } }}>
+                  10 Years
+                </TableCell>
+                <TableCell align="right">
+                  <Button size="small" sx={{ fontSize: { xs: "11px", sm: "13px" } }}>
+                    Edit
+                  </Button>
+                  <Button
+                    size="small"
+                    color="error"
+                    sx={{ fontSize: { xs: "11px", sm: "13px" } }}
+                  >
+                    Delete
+                  </Button>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </Box>
       </Paper>
     </>
   );
