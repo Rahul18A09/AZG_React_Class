@@ -38,13 +38,7 @@
 
 // export default Dashboard;
 
-import {
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Grid, Card, CardContent, Typography, Box } from "@mui/material";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 
@@ -90,33 +84,34 @@ const StatCard = ({ title, value, icon, color }) => (
 const Dashboard = () => {
   return (
     <>
-      <Typography variant="h4" fontWeight="bold" mb={4}>
+      <Typography
+        sx={{ fontSize: "25px" }}
+        variant="h4"
+        fontWeight="bold"
+        mb={4}
+      >
         Admin Dashboard
       </Typography>
 
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <StatCard
+            sx={{ fontSize: "20px" }}
             title="Doctors"
             value={0}
             color="#8bc34a"
-            icon={
-              <LocalHospitalIcon
-                sx={{ fontSize: 48, color: "#4caf50" }}
-              />
-            }
+            icon={<LocalHospitalIcon sx={{ fontSize: 48, color: "#4caf50" }} />}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
           <StatCard
+            sx={{ fontSize: "25px" }}
             title="Appointments"
             value={0}
             color="#4caf50"
             icon={
-              <EventAvailableIcon
-                sx={{ fontSize: 48, color: "#2e7d32" }}
-              />
+              <EventAvailableIcon sx={{ fontSize: 48, color: "#2e7d32" }} />
             }
           />
         </Grid>

@@ -46,15 +46,16 @@ const Sidebar = () => {
           width: drawerWidth,
           backgroundColor: "#2e7d32",
           color: "#fff",
+        
         },
       }}
     >
       {/* Logo */}
-      <Box sx={{ p: 2, textAlign: "center" }}>
-        <Typography variant="h6" fontWeight="bold">
+      <Box sx={{ p:2, textAlign: "center" }}>
+        <Typography variant="h6" fontWeight="bold" sx={{fontSize:"20px"}}>
           Health Center
         </Typography>
-        <Typography variant="caption">
+        <Typography variant="caption" sx={{fontSize:"16px"}}>
           Admin Panel
         </Typography>
       </Box>
@@ -69,10 +70,12 @@ const Sidebar = () => {
             sx={{
               "&.Mui-selected": {
                 backgroundColor: "#1b5e20",
+                fontSize:"16px",
               },
               "&:hover": {
                 backgroundColor: "#1b5e20",
               },
+             
             }}
           >
             <ListItemIcon sx={{ color: "#fff" }}>
