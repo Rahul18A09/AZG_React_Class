@@ -1,0 +1,29 @@
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Home from '../container/Home'
+import AboutUs from '../container/AboutUs'
+import Doctors from '../container/Doctors'
+import News from '../container/News'
+import Contact from '../container/Contact'
+import MakeAnAppointment from '../container/MakeAnAppointment'
+
+const UserRoutes = () => {
+  return (
+    <>
+     <Header/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/doctors" element={<Doctors/>} />
+        <Route path="/news" element={<News/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/appointment" element={<MakeAnAppointment/>} />
+      </Routes>
+    <Footer/>
+    </>
+  )
+}
+
+export default UserRoutes

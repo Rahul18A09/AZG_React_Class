@@ -1,31 +1,21 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-
-// Public pages
-import Home from "./container/Home";
-import AboutUs from "./container/AboutUs";
-import Doctors from "./container/Doctors";
-import News from "./container/News";
-import Contact from "./container/Contact";
-import MakeAnAppointment from "./container/MakeAnAppointment";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
+import UserRoutes from "./routes/UserRoutes";
+import Login from "./admin/pages/Login";
+import AdminRoutes from "./routes/AdminRoutes";
 
 function App(props) {
   return (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/doctors" element={<Doctors />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/appointment" element={<MakeAnAppointment />} />
-      </Routes>
-      <Footer />
-    </>
+    <Routes>
+      {/* User Routes */}
+      <Route path="/*" element={<UserRoutes />} />
+
+      {/* Admin Login */}
+      <Route path="/admin/login" element={<Login />} />
+
+      {/* Admin Routes */}
+      <Route path="/admin/*" element={<AdminRoutes />} />
+    </Routes>
   );
 }
 
