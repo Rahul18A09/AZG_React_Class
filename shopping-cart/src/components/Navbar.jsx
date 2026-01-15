@@ -13,7 +13,7 @@ function Navbar() {
             Home
           </Link>
           <Link className="nav-link d-inline text-white" to="/cart">
-            Cart (2)
+            Cart {Cart.length}
           </Link>
         </div>
       </div>
