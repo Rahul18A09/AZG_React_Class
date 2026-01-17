@@ -1,24 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <Link className="navbar-brand fw-bold" to="/">
-          🛒 MyShop
-        </Link>
-        <div>
-          <Link className="nav-link d-inline me-3 text-white" to="/">
-            Home
-          </Link>
-          <Link className="nav-link d-inline text-white" to="/cart">
-            Cart {Cart.length}
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
+    <div>
+      <h1>Navbar</h1>
+    </div>
+  )
 }
 
-export default Navbar;
+export default Navbar

@@ -1,55 +1,66 @@
-import { useCart } from "../context/CartContext";
+import { useDispatch, useSelector } from "react-redux";
+import {decreaseQty,increaseQty,removeFromCart} from "../App/featues/ShopCart/cartSlice";
 
-export default function Cart(){
-    const {cart, removeFormCart, updateQty, total} = useCart()
+const Cart = () => {
+  const { items } = useSelector(state => state.cart);
+  const dispatch = useDispatch();
 
-    return (
-        <div className="container">
-        <h2 className="mb-3">Your Cart</h2>
+  const total = items.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
 
-        {cart.length === 0 ? (
-            <div className="alert alert-info">No items in cart</div>
-        ) : (
-            <>
-                <table className="table table-bordered align-middle">
-                <thead className="table-light">
-                    <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Subtotal</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {cart.map((item) => (
-                    <tr key={item.id}>
-                        <td>{item.name}</td>
-                        <td>${item.price}</td>
-                        <td style={{width: "100px"}}>
-                            <input
-                            className="form-control text-center"
-                            min="1"
-                            type="number"
-                            value={item.qty}
-                            onChange={(e) => updateQty(item.id, Number(e.target.value) )}
-                            />
-                        </td>
-                        <td>${item.price * item.qty}</td>
-                        <td>
-                            <button 
-                                onClick={() => removeFormCart(item.id)}
-                                className="btn btn-outline-danger btn-sm">
-                                Remove
-                            </button>
-                        </td>
-                    </tr>
-                    ))}
-                </tbody>
-                </table>
-              <div className="text-end fw-bold fs-5">Total: ${total.toFixed(2)}</div>
-            </>
-        )}
-      </div>
-    )
-}
+  return (
+    <div className="mt-8">
+      <h2 className="text-xl font-bold mb-4">Cart</h2>
+
+      {items.length === 0 && (
+        <p className="text-gray-500">Cart is empty</p>
+      )}
+
+      {items.map(item => (
+        <div
+          key={item.id}
+          className="flex flex-col sm:flex-row sm:items-center justify-between border-b py-3"
+        >
+          <div>
+            <h3 className="font-semibold">{item.name}</h3>
+            <p>₹{item.price}</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-2 sm:mt-0">
+            <button
+              onClick={() => dispatch(decreaseQty(item.id))}
+              className="px-3 bg-gray-200 rounded"
+            >
+              -
+            </button>
+            <span>{item.qty}</span>
+            <button
+              onClick={() => dispatch(increaseQty(item.id))}
+              className="px-3 bg-gray-200 rounded"
+            >
+              +
+            </button>
+
+            <button
+              onClick={() => dispatch(removeFromCart(item.id))}
+              className="text-red-600 ml-4"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      ))}
+
+      {items.length > 0 && (
+        <h3 className="text-right font-bold mt-4">
+          Total: ₹{total}
+        </h3>
+      )}
+    </div>
+  );
+};
+
+export default Cart;
+
