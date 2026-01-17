@@ -1,8 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import {decreaseQty,increaseQty,removeFromCart} from "../App/featues/ShopCart/cartSlice";
+import {
+  removeFromCart,
+  increaseQty,
+  decreaseQty,
+} from "../App/featues/ShopCart/cartSlice";
 
 const Cart = () => {
-  const { items } = useSelector(state => state.cart);
+  const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const total = items.reduce(
@@ -11,56 +15,61 @@ const Cart = () => {
   );
 
   return (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">Cart</h2>
+    <div className="bg-white rounded-xl shadow p-5 sticky top-20">
+      <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
 
       {items.length === 0 && (
-        <p className="text-gray-500">Cart is empty</p>
+        <p className="text-gray-500 text-sm">
+          Your cart is empty
+        </p>
       )}
 
-      {items.map(item => (
+      {items.map((item) => (
         <div
           key={item.id}
-          className="flex flex-col sm:flex-row sm:items-center justify-between border-b py-3"
+          className="flex justify-between items-center border-b py-3"
         >
           <div>
-            <h3 className="font-semibold">{item.name}</h3>
-            <p>₹{item.price}</p>
+            <h3 className="font-medium">{item.name}</h3>
+            <p className="text-sm text-gray-500">
+              ₹{item.price}
+            </p>
           </div>
 
-          <div className="flex items-center gap-3 mt-2 sm:mt-0">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => dispatch(decreaseQty(item.id))}
-              className="px-3 bg-gray-200 rounded"
+              className="px-2 bg-gray-200 rounded"
             >
               -
             </button>
-            <span>{item.qty}</span>
-            <button
-              onClick={() => dispatch(increaseQty(item.id))}
-              className="px-3 bg-gray-200 rounded"
-            >
-              +
-            </button>
+
+            <span className="text-sm">{item.qty}</span>
 
             <button
-              onClick={() => dispatch(removeFromCart(item.id))}
-              className="text-red-600 ml-4"
+              onClick={() => dispatch(increaseQty(item.id))}
+              className="px-2 bg-gray-200 rounded"
             >
-              Remove
+              +
             </button>
           </div>
         </div>
       ))}
 
       {items.length > 0 && (
-        <h3 className="text-right font-bold mt-4">
-          Total: ₹{total}
-        </h3>
+        <>
+          <div className="flex justify-between font-semibold mt-4">
+            <span>Total</span>
+            <span>₹{total}</span>
+          </div>
+
+          <button className="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+            Checkout
+          </button>
+        </>
       )}
     </div>
   );
 };
 
 export default Cart;
-
