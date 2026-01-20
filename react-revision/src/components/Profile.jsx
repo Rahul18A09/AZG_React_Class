@@ -1,11 +1,13 @@
 import React from "react";
 
-function Profile() {
+function Profile(props) {
   return (
-    <div>
-      <h1>Rahul</h1>
-      <h2>FrontEnd Developer</h2>
-    </div>
+    <>
+      <div>
+        <h1>{props.name}</h1>
+        <h2>{props.role}</h2>
+      </div>
+    </>
   );
 }
 

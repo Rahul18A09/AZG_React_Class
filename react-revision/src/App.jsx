@@ -1,16 +1,16 @@
-
-import './App.css'
+import "./App.css";
+import Profile from "./components/Profile";
+import UserCard from "./components/UserCard";
 
 function App() {
-
-
   return (
-    <div>
-      <h1>Rahul</h1>
-      <h2>FrontEnd Developer</h2>
-    </div>
+    <>
+      {/* <Profile name="Rahul" role="Frontend Developer" /> */}
+      {/* <Profile name="Asha" role="Backend Developer" /> */}
 
-  )
+      <UserCard name="Rahul" age={26} city="Keshod" />
+    </>
+  );
 }
 
-export default App
+export default App;
