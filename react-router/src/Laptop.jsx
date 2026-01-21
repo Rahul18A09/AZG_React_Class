@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const Laptop = () => {
+function Laptop() {
   return (
     <div>
       <h2>Laptop List</h2>
-     <ul>
-        <li>Apple MacBook</li>
-        <li>Samsung NoteBook</li>
-        <li>Gell Inspiron</li>
-     </ul>
+      <ul>
+        <li>Apple MackBook</li>
+        <li>Samsung Notebook</li>
+        <li>Dell Inspiron</li>
+      </ul>
     </div>
-  )
+  );
 }
 
-export default Laptop
+export default Laptop;
