@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
-import { app } from '../firebase';
-
+import React, { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "../firebase";
 
 function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    
-    const auth  = getAuth(app);
+  const auth = getAuth(app);
 
-const SignIn  = () =>{
-    signInWithEmailAndPassword(auth, email, password).then((value) => console.log("Signin success")).catch((error) => console.log(error));
-}
+  const SignIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((value) => console.log("Signin success"))
+      .catch((error) => console.log(error));
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <div className="signin-page">
@@ -34,7 +36,7 @@ const SignIn  = () =>{
       />
       <button onClick={SignIn}>Sign me In</button>
     </div>
-  )
+  );
 }
 
 export default SignIn;

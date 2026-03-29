@@ -6,12 +6,12 @@ function Crud() {
   const [users, setUsers] = useState([]);
   const [editId, setEditId] = useState(null);
 
-  useEffect(() => {
-    const storedUsers = JSON.parse(localStorage.getItem("users"));
-    if (storedUsers) {
-      setUsers(storedUsers);
-    }
-  }, []);
+    useEffect(() => {
+      const storedUsers = JSON.parse(localStorage.getItem("users"));
+      if (storedUsers) {
+        setUsers(storedUsers);
+      }
+    }, []);
 
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
